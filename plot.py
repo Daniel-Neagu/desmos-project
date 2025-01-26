@@ -6,7 +6,7 @@ import pyqtgraph as pg
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow
 from PyQt5.QtGui import QPalette, QColor
 from PyQt5.QtGui import QGuiApplication
-
+import plottingfunctions
 
 #this is the graph which will be the largest widget in this applet
 class graph(pg.PlotWidget):
@@ -16,6 +16,7 @@ class graph(pg.PlotWidget):
         #self.setAspectLocked() we want the graph to stretch with the entire screen so no
         self.setFocusPolicy(Qt.NoFocus)
         self.setSizePolicy(QSizePolicy.Expanding,QSizePolicy.Expanding)
+        plottingfunctions.plotLine(1,4,24,25,1000,"lightblue",self)
 
     #maybe make some functions to change the zoom levels, or tinker with other aspects 
 
